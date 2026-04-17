@@ -1,0 +1,21 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.2.2">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>c09e3cf2-3072-4569-a98b-7fc9e720ee1d</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\aspire-template.ApiService\aspire-template.ApiService.csproj"/>
+        <ProjectReference Include="..\aspire-template.Web\aspire-template.Web.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.2.2" />
+      <PackageReference Include="Aspire.Hosting.Redis" Version="13.2.2" />
+    </ItemGroup>
+
+</Project>
