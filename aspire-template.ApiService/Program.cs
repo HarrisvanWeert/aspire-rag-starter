@@ -1,5 +1,6 @@
 using aspire.template.ApiService.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ app.UseExceptionHandler();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.MapDefaultEndpoints();
