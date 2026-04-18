@@ -1,22 +1,22 @@
 using aspire.template.ApiService.Infrastructure.Data;
-using Aspire.Npgsql.EntityFrameworkCore.PostgreSQL;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
 
-// Add services to the container.
 builder.Services.AddProblemDetails();
-
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 builder.AddNpgsqlDbContext<ApplicationDbContext>("appdb");
 
+builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.MapIdentityApi<IdentityUser>();
+
 app.UseExceptionHandler();
 
 if (app.Environment.IsDevelopment())

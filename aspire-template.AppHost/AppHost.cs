@@ -1,9 +1,12 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var postgres = builder.AddPostgres("postgres")
-    .WithPgAdmin();
+var postgresPassword = builder.AddParameter("postgres-password", "yourstaticpassword", secret: true);
 
+var postgres = builder.AddPostgres("postgres", password: postgresPassword, port: 5432)
+    .WithDataVolume()
+    .WithPgAdmin();
 var db = postgres.AddDatabase("appdb");
+
 
 var redis = builder.AddRedis("redis")
     .WithRedisInsight();
