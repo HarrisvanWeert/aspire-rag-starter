@@ -11,14 +11,21 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.2.2" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.6">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
+        <PackageReference Include="Pgvector.EntityFrameworkCore" Version="0.3.0" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="common\" />
       <Folder Include="Endpoints\" />
       <Folder Include="Features\" />
-      <Folder Include="Infrastructure\" />
     </ItemGroup>
 
 </Project>
