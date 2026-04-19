@@ -10,7 +10,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\aspire-template.ApiService\aspire-template.ApiService.csproj"/>
-        <ProjectReference Include="..\aspire-template.Web\aspire-template.Web.csproj"/>
+        <ProjectReference Include="..\aspire-template.Web\aspire-template.Web.csproj" />
     </ItemGroup>
 
     <ItemGroup>
